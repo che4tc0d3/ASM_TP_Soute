@@ -11,8 +11,8 @@
         int 0x80            ;appeler le noyau Linux
  
  
-        mov rax, 60 ; syscall number for exit
-        mov rdi, 0
-        syscall
+        mov eax, 1 ; syscall number for exit
+        mov ebx, 0
+        int 0x80
  
  

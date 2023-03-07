@@ -49,10 +49,10 @@ even:
     mov eax, 4        ; appeler la fonction système pour écrire sur la sortie standard
     mov ebx, 1        ; la sortie standard est le flux de sortie (STDOUT)
     mov ecx, message_even  ; passer le message à afficher
-    mov edx, 20       ; la longueur du message en octets
+    mov edx, 19       ; la longueur du message en octets
     int 0x80          ; appeler le noyau
 
 end:
-    mov rax, 60 ; syscall number for exit
-    mov rdi, 0
+    mov eax, 1 ; syscall number for exit
+    mov ebx, 0
     int 0x80
